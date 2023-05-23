@@ -28,6 +28,7 @@ export class RegisterComponent {
 
  proceedregisteration(){
   if(this.registerform.valid){
+    console.log(this.registerform.value);
     this.service.proceedRegister(this.registerform.value).subscribe(res=>{
       this.toastr.success('Registered Successfully');
       this.router.navigate(['login']);

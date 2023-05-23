@@ -32,7 +32,7 @@ proceedlogin(){
   if(this.loginform.valid){
     this.service.getById(this.loginform.value.useremail).subscribe(res => {
       this.userdata = res;
-      this.registeredpassword = this.userdata[0].password;
+      this.registeredpassword = this.userdata.password;
       this.enteredpassword = this.loginform.value.password;
       if (this.enteredpassword === this.registeredpassword) {
         sessionStorage.setItem('useremail', 'this.loginform.value.useremail');

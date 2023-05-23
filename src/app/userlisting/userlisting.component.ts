@@ -55,7 +55,8 @@ export class UserlistingComponent {
 
   deleteUser(user:any){
     this.service.deleteUser(user.id).subscribe(res =>{
-    this.toastr.success(user.firstname + ' is Deleted');
+    //console.log(res);  
+    this.toastr.success('User Successfully Deleted');
     this.listUsers();      
     });
   }
