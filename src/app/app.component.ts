@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'MyTask';
+  ismenurequired=false;
+  constructor(private router:Router){
+
+  }
+
+  ngDoCheck(): void{
+    let currenturl = this.router.url;
+    if (currenturl == '/login' || currenturl == '/register') {
+      this.ismenurequired = false;
+    } else {
+      this.ismenurequired = true;
+    }
+  }
+
 }
